@@ -1,0 +1,55 @@
+
+<div class="container" id="link1">          
+      <div *ngFor="let list of doctorList ">
+ <table class="table table-bordered">
+    <thead>
+      <tr>
+         <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Age</th>
+        <th>Speciality</th>
+        
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>{{list.firstName}}</td>
+        <td>{{list.lastName}}</td>
+        <td>{{list.emailId}}</td>
+        <td>{{list.age}}</td>
+        <td>{{list.speciality}}</td>
+      </tr>
+    </tbody>
+     
+  </table>
+   </div>
+</div>
+
+<div class="container" id="link2">          
+<div *ngFor="let list of medicareList ">
+ <table class="table table-bordered">
+
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>MedicareService Name</th>
+        <th>Amount</th>
+        <th>Request</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{list.id}}</td>
+        <td>{{list.medicareService}}</td>
+        <td>{{list.amount}}</td>
+         <button type="button" class="btn btn-success " (click)="request(list.id)">Request</button>
+      </tr>
+       </tbody>
+  </table>
+</div>
+</div>
+    
+        
+    

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context = "http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+   <bean id="departmentBean" class="com.cognizant.springlearn.Department">
+   	<property name="id" value="1"/>
+   	<property name="name" value="Payroll"/>
+   </bean>
+   <bean id="skillHtml" class="com.cognizant.springlearn.Skill">
+   	<property name="id" value="1"/>
+   	<property name="name" value="HTML"/>
+   </bean>
+   <bean id="skillCss" class="com.cognizant.springlearn.Skill">
+   	<property name="id" value="2"/>
+   	<property name="name" value="CSS"/>
+   </bean>
+   <bean id="skillJs" class="com.cognizant.springlearn.Skill">
+   	<property name="id" value="1"/>
+   	<property name="name" value="JS"/>
+   </bean>
+   <bean id="employee" class="com.cognizant.springlearn.Employee">
+   	<property name="id" value="1"/>
+   	<property name="name" value="Ayshu"/>
+   	<property name="salary" value="100000"/>
+   	<property name="permanent" value="true"/>
+   	<property name="dateOfBirth" value="26/02/1998"/>
+   	<property name="department" ref="departmentBean"/>
+   	<property name="skill">
+   		<array>
+   			<ref bean="skillHtml"/>
+   			<ref bean="skillCss"/>
+   			<ref bean="skillJs"/>
+   		</array>
+   	</property>
+   </bean>
+   
+   </beans>

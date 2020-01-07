@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context = "http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:component-scan base-package="com.abc" />
+	<context:annotation-config/>
+	<!-- <bean id="helloWorld" class="com.abc.HelloWorld">
+		<constructor-arg value="Bad"/>
+		<constructor-arg index='0' value="happy"/>
+		<constructor-arg index='1' value="B'day"/>
+		<constructor-arg type="java.lang.String" index='1' value="bad"/>
+		<constructor-arg type="int" index='0' value='1'/>
+		<property name="message" value="Night"/>calls the setter method and sets the value
+		<property name="citiesList">
+			<list>
+			<value>Chennai</value>
+			<value>Delhi</value>
+			<value>Kolkata</value>
+			</list>
+		</property>
+		<property name="fruitsSet">
+			<set>
+				<value>Apple</value>
+				<value>Mango</value>
+				<value>Orange</value>
+				<value>Orange</value>
+			</set>	
+		</property>
+		<property name="foodMap">
+			<map>
+				<entry key='1' value="French Fries"/>
+				<entry key='2' value="Brownie"/>
+				<entry key='3' value="Sandwich"/>
+				<entry key='1' value="French Fries"/>
+			</map>
+		</property> 
+	</bean> -->
+</beans>

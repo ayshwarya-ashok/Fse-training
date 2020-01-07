@@ -1,0 +1,75 @@
+<form [formGroup]="loginForm" (submit)="login(loginForm)">
+        <div class="container mt-5">
+                <div class="form-row">
+                    <div class="form-group col-lg-3 col-md-12 col-sm-12 col-12"></div>
+                    <div class="form-group border rounded col-lg-6 col-md-12 col-sm-12 col-12 p-3">
+                        <h3>Login</h3>
+                            <span *ngIf="isNotCustomer">
+                                <h5 class="alert alert-danger" role="alert">New User must signup initially or check for valid credentials.</h5>
+                            </span>
+                            <!-- <span *ngIf="signupStatus==true">
+                                <h5 class="alert alert-danger" role="alert">New User must signup initially or check for valid credentials</h5>
+                            </span> -->
+                        <div class="form-row">
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+                                <label for="userName">Username</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="userName" 
+                                    name="userName" 
+                                    placeholder="Enter Username"
+                                    formControlName="userName"/>
+                                <div *ngIf="!loginForm.get('userName').valid && loginForm.get('userName').touched" class="err-mssg-style">
+                                    Username is mandatory.
+                                </div>
+                            </div> 
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+                                <label for="psw">Password</label>
+                                <input 
+                                    type="password" 
+                                    class="form-control" 
+                                    id="psw" 
+                                    name="psw" 
+                                    placeholder="Enter Password"
+                                    formControlName="password"/>
+                                <div *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched" class="err-mssg-style">
+                                    Password is mandatory.
+                                </div>    
+                            </div>
+                        </div>	
+                            <span *ngIf="roleType=='customer'">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-2 col-md-2 col-sm-2 col-2">
+                                        <button type="submit" [disabled]="!loginForm.valid" class="btn save-btn-style">Login</button>
+                                    </div>
+                                    <div class="form-group col-lg-10 col-md-10 col-sm-10 col-10  d-flex justify-content-end">New here?
+                                        <a routerLink="/customer-signup" routerLinkActive="active-link">Signup</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span *ngIf="roleType=='doctor'">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-2 col-md-2 col-sm-2 col-2">
+                                        <button type="submit" [disabled]="!loginForm.valid" class="btn save-btn-style">Login</button>
+                                    </div>
+                                    <div class="form-group col-lg-10 col-md-10 col-sm-10 col-10  d-flex justify-content-end">New here?
+                                        <a routerLink="/doctor-signup" routerLinkActive="active-link">Signup</a>
+                                    </div>
+                                </div>
+                            </span>
+                            <span *ngIf="roleType=='admin'">
+                                <div class="form-row">
+                                    <div class="form-group col-lg-2 col-md-2 col-sm-2 col-2">
+                                        <button type="submit" [disabled]="!loginForm.valid" class="btn save-btn-style">Login</button>
+                                    </div>
+                                    <div class="form-group col-lg-10 col-md-10 col-sm-10 col-10 d-flex justify-content-end">New here?
+                                        <a routerLink="/admin-signup" routerLinkActive="active-link">Signup</a>
+                                    </div>
+                                </div>
+                            </span>
+                    </div>
+                    <div class="form-group col-lg-3 col-md-12 col-sm-12 col-12"></div>
+                </div>
+        </div>
+</form>

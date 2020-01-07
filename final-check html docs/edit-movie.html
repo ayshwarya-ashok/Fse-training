@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="D:\movie-cruiser\WebContent\style\style.css"/>
+		<script src="D:\movie-cruiser\WebContent\js\script.js"></script>
+		<style>
+			td{
+				text-align: left;
+			}
+			#title{
+				width: 720px;
+		    }
+		</style>
+	</head>
+	<body class="bg-style" background="\movie-cruiser\WebContent\images\bgimage.jpg">
+		<header>
+			<h3>
+				<span id="movie-cruiser-style">Movie Cruiser &nbsp; &nbsp;</span>
+				<span><img src="D:\movie-cruiser\WebContent\images\logo.png" alt="movieCruiserLOGO" class="logo-style"/></span>
+				<span><a href="D:\movie-cruiser\WebContent\movie-list-admin.html" id="movies-link-style">Movies</a></span>
+			</h3>
+		</header>
+		<br><br><br>
+		<section>
+			<article>
+			<form action="edit-movie-status.html" onsubmit="return validate()" method="post">
+				<table>
+					<tr>
+						<td><h3>Edit Movie</h3></td>
+					</tr>
+					<tr>
+						<td colspan="4"><label for="title">Title</label><br>
+						<input type="text" name="title" id="title" value="Avengers - End Game"/></td> 
+					</tr>
+					<tr>
+						<td id="title-message" class="errmessage-style"></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td><label for="boxoffice">Gross ($)</label></td>
+						<td>Active</td>
+						<td><label for="dateOfLaunch">Date of Launch</label></td>
+						<td><label for="genre">Genre</label></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="boxOffice" id="boxoffice" value="2787965087"></td> 
+						<td><input type="radio" name="active" value="yes" id="yes" checked ><label for="yes">Yes</label>
+							<input type="radio" name="active" value="no" id="no"><label for="no">No</label></td>
+						<td><input type="text" name="dateOfLaunch" id="dateOfLaunch" placeholder="dd/mm/yyyy" value="27/04/2022"/></td> 
+						<td>
+							<select name="genre" id="genre">
+								<option></option>
+								<option value="science_fiction" >Science Fiction</option>
+								<option value="superhero">Superhero</option>
+								<option value="romance">Romance</option>
+								<option value="comedy">Comedy</option>
+								<option value="adventure">Adventure</option>
+								<option value="thriller">Thriller</option>
+							</select>	
+						</td> 
+					</tr>
+					<tr>
+						<td id="gross-message" class="errmessage-style"></td>
+						<td></td>
+						<td id="dol-message" class="errmessage-style"></td>
+						<td id="genre-message" class="errmessage-style"></td>
+					</tr>
+					<tr>
+						<td><br><input type="checkbox" name="hasTeaser" value="has_teaser" id="hasTeaser" checked><label for="hasTeaser">Has Teaser</label></td>
+					</tr>
+					
+					<tr>
+						<td><br><br><button type="submit" target="_self" name="submit" id="save-button-style"/>Save</button></td>
+					</tr>
+				</table>
+			</form>
+		</article>	
+		</section>
+		<footer>
+			<p>
+				<span>Copyright</span>
+				<span><img src="D:\movie-cruiser\WebContent\images\copyright.png" alt="copyright_logo" class="copyright-style"/></span>
+				<span>2019</span>
+			</p>	
+		</footer>
+	</body>
+</html>

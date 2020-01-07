@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg nav-bg-color navbar-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item head-font-size">
+           <img src="https://www.medicaresystem.in/admin_medicare/image/493332aaaaa.png" style="height: 60px; width:300px">
+        </li>
+        
+    </ul>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavBar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavBar">
+        <ul class="navbar-nav ml-auto">
+            <!-- <span></span>
+            <li class="nav-item"><a class="nav-link text-white" routerLink="/" routerLinkActive="active-link"></a></li>
+            <span *ngIf="getUserType() !='admin' && getUserType() != 'ananymous'">
+                <li class="nav-item"><a class="nav-link text-white" routerLink="/" routerLinkActive="active-link"></a></li>
+            </span> -->
+            <span *ngIf="getUserType() != 'ananymous'">
+                <li class="nav-item"><i class="material-icons" style='font-size:34px;'>person</i></li>
+            </span>
+            <span *ngIf="getUserType() != 'ananymous'">    
+                <li class="nav-item">{{getUserName()}}</li>
+            </span>    
+            <span *ngIf="getUserType() !='ananymous'">
+                <li class="nav-item"><a class="nav-link text-white" routerLink="/" routerLinkActive="active-link" (click)="logout()">Logout</a></li>
+            </span>
+        </ul>
+    </div>
+</nav>

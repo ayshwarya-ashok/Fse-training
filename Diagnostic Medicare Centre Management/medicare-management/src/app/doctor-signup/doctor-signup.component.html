@@ -1,0 +1,265 @@
+<form [formGroup]="signupFormDoctor" (submit)="signup(signupFormDoctor)">
+    <div class="container mt-5">
+            <div class="form-row">
+                <div class="form-group col-lg-3 col-md-12 col-sm-12 col-12"></div>
+                <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12 border rounded p-3">
+                    <h3>Signup</h3>
+                    <div class="form-row">
+                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12">
+                            <span *ngIf="existingUserStatus">
+                                <span class="alert alert-danger">Already Existing User!!! Go to 
+                                    <a routerLink="/login" routerLinkActive="active-link">login</a>.
+                                </span>
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="form-row">
+                          <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+                                  <label for="userName">User Name</label>
+                                  <input 
+                                      type="text" 
+                                      class="form-control" 
+                                      id="userName" 
+                                      name="userName" 
+                                      placeholder="Enter User Name"
+                                      formControlName="userName"/>
+                                      <div *ngIf="!signupFormDoctor.get('userName').valid && signupFormDoctor.get('userName').touched" 
+                                          class="err-mssg-style">Username is mandatory with minimum of 3 characters.
+                                      </div>    
+                          </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+                            <label for="firstName">First Name</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="firstName" 
+                                name="firstName" 
+                                placeholder="Enter First Name"
+                                formControlName="firstName"/>
+                                <div *ngIf="!signupFormDoctor.get('firstName').valid && signupFormDoctor.get('firstName').touched" 
+                                    class="err-mssg-style">Firstname is mandatory with minimum of 3 characters.
+                                </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+                            <label for="lastName">Last Name</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="lastName" 
+                                name="lastName" 
+                                placeholder="Enter Last Name"
+                                formControlName="lastName"/>
+                            <div *ngIf="!signupFormDoctor.get('lastName').valid && signupFormDoctor.get('lastName').touched" 
+                                class="err-mssg-style">Lastname is mandatory with minimum of 3 characters.
+                            </div>    
+                        </div>
+                       
+                          <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                            <label for="age">Age</label>
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                id="age" 
+                                name="age" 
+                                placeholder="Enter Age"
+                                formControlName="age"/>
+                            <div *ngIf="!signupFormDoctor.get('age').valid && signupFormDoctor.get('age').touched" 
+                                class="err-mssg-style">Age is mandatory.
+                            </div>    
+                          </div>
+                          <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12" formGroupName="division">
+                            <label for="gender">Gender</label>
+                            <select class="form-control" name="gender" formControlName="gender">
+                                <option value="female">Female</option>
+                                <option value="male">Male</option>
+                            </select>	
+                          </div>
+                          <div class="form-group col-lg-6 col-md-12 col-sm-12">
+                            <label for="dateOfBirth">Date of Birth</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="dateOfBirth" 
+                                name="dateOfBirth" 
+                                placeholder="dd/mm/yyyy"
+                                formControlName="dateOfBirth"/>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12 col-12 err-mssg-style" 
+                                    *ngIf="!signupFormDoctor.get('dateOfBirth').valid && signupFormDoctor.get('dateOfBirth').touched">
+                                        Date of Birth is mandatory.
+                                 </div>
+                          </div>
+                        
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+                          <label for="contact">Contact Number</label>
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              id="contact" 
+                              name="contact" 
+                              placeholder="Enter Contact Number"
+                              formControlName="contactNumber"/>
+                          <div *ngIf="!signupFormDoctor.get('contactNumber').valid && signupFormDoctor.get('contactNumber').touched" 
+                              class="err-mssg-style">Contact Number is mandatory with 10 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+                          <label for="altcontact">Alternate Contact Number</label>
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              id="altcontact" 
+                              name="altcontact" 
+                              placeholder="Enter Alternate Contact Number"
+                              formControlName="altContactNumber"/>
+                          <div *ngIf="!signupFormDoctor.get('altContactNumber').valid && signupFormDoctor.get('altContactNumber').touched" 
+                              class="err-mssg-style">Alternate Contact Number is mandatory with 10 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                          <label for="email">Email Id</label>
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              id="email" 
+                              name="email" 
+                              placeholder="Enter Email Id"
+                              formControlName="emailId"/>
+                          <div *ngIf="!signupFormDoctor.get('emailId').valid && signupFormDoctor.get('emailId').touched" 
+                              class="err-mssg-style">Email Id is mandatory with minimum of 5 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                          <label for="psw">Password</label>
+                          <input 
+                              type="password" 
+                              class="form-control" 
+                              id="psw" 
+                              name="psw" 
+                              placeholder="Enter Password"
+                              formControlName="password"/>
+                          <div *ngIf="!signupFormDoctor.get('password').valid && signupFormDoctor.get('password').touched" 
+                              class="err-mssg-style">Password is mandatory with minimum of 8 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                              <label for="addLine1">Address Line 1:</label>
+                              <input 
+                                  type="text" 
+                                  class="form-control" 
+                                  id="addLine1" 
+                                  name="addLine1" 
+                                  placeholder="Enter Address Line 1"
+                                  formControlName="addressLine_1"/>
+                              <div *ngIf="!signupFormDoctor.get('addressLine_1').valid && signupFormDoctor.get('addressLine_1').touched" 
+                                  class="err-mssg-style">Address is mandatory with minimum of 5 characters.
+                              </div>    
+                            </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                          <label for="addLine2">Address Line 2:</label>
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              id="addLine2" 
+                              name="addLine2" 
+                              placeholder="Enter Address Line 2"
+                              formControlName="addressLine_2"/>
+                          <div *ngIf="!signupFormDoctor.get('addressLine_2').valid && signupFormDoctor.get('addressLine_2').touched" 
+                              class="err-mssg-style">Address is mandatory with minimum of 5 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                          <label for="city">City</label>
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              id="city" 
+                              name="city" 
+                              placeholder="Enter City"
+                              formControlName="city"/>
+                          <div *ngIf="!signupFormDoctor.get('city').valid && signupFormDoctor.get('city').touched" 
+                              class="err-mssg-style">City is mandatory with minimum of 5 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                          <label for="state">State</label>
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              id="state" 
+                              name="state" 
+                              placeholder="Enter State"
+                              formControlName="state"/>
+                          <div *ngIf="!signupFormDoctor.get('state').valid && signupFormDoctor.get('state').touched" 
+                              class="err-mssg-style">State is mandatory with minimum of 5 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                          <label for="zipCode">Zip Code</label>
+                          <input 
+                              type="text" 
+                              class="form-control" 
+                              id="zipCode" 
+                              name="zipCode" 
+                              placeholder="Enter Zip Code"
+                              formControlName="zipCode"/>
+                          <div *ngIf="!signupFormDoctor.get('zipCode').valid && signupFormDoctor.get('zipCode').touched" 
+                              class="err-mssg-style">Zip Code is mandatory with minimum of 5 characters.
+                          </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                            <label for="degree">Degree</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="degree" 
+                                name="degree" 
+                                placeholder="Enter Degree"
+                                formControlName="degree"/>
+                            <div *ngIf="!signupFormDoctor.get('degree').valid && signupFormDoctor.get('degree').touched" 
+                                class="err-mssg-style">Degree is mandatory with minimum of 5 characters.
+                            </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                            <label for="speciality">Speciality</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="speciality" 
+                                name="speciality" 
+                                placeholder="Enter Speciality"
+                                formControlName="speciality"/>
+                            <div *ngIf="!signupFormDoctor.get('speciality').valid && signupFormDoctor.get('speciality').touched" 
+                                class="err-mssg-style">Speciality is mandatory with minimum of 5 characters.
+                            </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12" formGroupName="divWorkHrs">
+                            <label for="workHours">Work Hours:</label>
+                            <select class="form-control" name="workHours" formControlName="workHours">
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>	
+                        </div>
+                        <div class="form-group col-lg-6 col-md-12 col-sm-12 col-12">
+                            <label for="hospitalName">HospitalName</label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="hospitalName" 
+                                name="hospitalName" 
+                                placeholder="Enter Hospital Name"
+                                formControlName="hospitalName"/>
+                            <div *ngIf="!signupFormDoctor.get('hospitalName').valid && signupFormDoctor.get('hospitalName').touched" 
+                                class="err-mssg-style">Hospital Name is mandatory with minimum of 5 characters.
+                            </div>    
+                        </div>
+                        <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+                            <button type="submit" class="btn save-btn-style" [disabled]="!signupFormDoctor.valid">Signup</button>
+                        </div>
+                        </div>
+                    </div>
+                <div class="form-group col-lg-3 col-md-12 col-sm-12 col-12"></div>
+            </div>	
+    </div>        
+  </form>
+  

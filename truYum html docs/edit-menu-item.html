@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css"
+	href="D:\truYum\WebContent\style\style.css" />
+<script src="D:\truYum\WebContent\js\script.js"></script>
+<style>
+td {
+	text-align: left;
+}
+
+#name {
+	width: 710px;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h3>
+			<span id="truYum-style">truYum &nbsp; &nbsp;</span> <span><img
+				src="D:\truYum\WebContent\images\truyum-logo-dark.png"
+				alt="truYumLOGO" class="logo-style" /></span> <span><a
+				href="D:\truYum\WebContent\menu-item-list-admin.html"
+				id="menu-link-style">Menu</a></span>
+		</h3>
+	</header>
+	<br>
+	<br>
+	<br>
+	<section>
+		<article>
+			<form action="edit-menu-item-status.html"
+				onsubmit="return validate()" method="post">
+				<table>
+					<tr>
+						<td><h3>Edit Menu Item</h3></td>
+					</tr>
+					<tr>
+						<td colspan="4"><label for="name">Name</label><br> <input
+							type="text" name="title" id="name" value="Sandwich" /></td>
+					</tr>
+					<tr>
+						<td><br></td>
+					</tr>
+					<tr>
+						<td><label for="price">Price (Rs.)</label></td>
+						<td><label for="yes">Active</label></td>
+						<td><label for="dateOfLaunch">Date of Launch</label></td>
+						<td><label for="category">Category</label></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="price" id="price" value="99.00"></td>
+						<td><input type="radio" name="inStock" value="yes" id="yes"
+							checked>Yes <input type="radio" name="inStock"
+							value="no">No</td>
+						<td><input type="text" name="dateOfLaunch" id="dateOfLaunch"
+							placeholder="dd/mm/yyyy" value="15/03/2017" /></td>
+						<td><select name="category" id="category">
+								<option></option>
+								<option value="main_course" selected>Main Course</option>
+								<option value="starters">Starters</option>
+								<option value="dessert">Dessert</option>
+								<option value="drinks">Drinks</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><br>
+						<input type="checkbox" name="freeDelivery" value="delivery_free"
+							id="freeDelivery" checked><label for="freeDelivery">Free
+								Delivery</label></td>
+					</tr>
+
+					<tr>
+						<td><br>
+						<br>
+						<button type="submit" target="_self" name="submit"
+								id="save-button-style" />Save
+							</button></td>
+					</tr>
+				</table>
+			</form>
+		</article>
+	</section>
+	<footer>
+		<p>
+			<span>Copyright</span> <span><img
+				src="D:\truYum\WebContent\images\copyright.png" alt="copyright_logo"
+				class="copyright-style" /></span> <span>2019</span>
+		</p>
+	</footer>
+</body>
+</html>

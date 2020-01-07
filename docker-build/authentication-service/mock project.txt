@@ -1,0 +1,34 @@
+1.75 hrs for 1 user story
+7 hrs for 4 user stories--per day
+total: 35 hrs for 5 days
+
+Day 1: 
+	Req1-initial selection
+	Req2-customer registration
+	Req3-customer authentication
+	Req4-Doctor registration
+	Req5-Doctor authentication
+Day2:
+	Req8-Admin Registration
+	Req9-Admin Authentication
+	Req10-add/update medicare service details
+	Req12-view medicare service details with doctor details to the customer
+Day3:
+	Req13-Book appoinment
+	Req14-Approval or denial for appointment
+	Req15-view appointment status
+	Req17-update test results
+
+Day4:
+	Req18-view test results
+	Req32-logout()	
+
+
+
+
+
+
+Doubt:
+user reg -userid or username
+if admin rejects user..can he again sign up and login --Req2.10
+
